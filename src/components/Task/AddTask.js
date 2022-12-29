@@ -13,7 +13,7 @@ const AddTask = () => {
     const update = false;
     const taskData = { taskMessage, taskImage, email, completed, update };
     // console.log(taskMessage, taskImage);
-    fetch("http://localhost:5000/task", {
+    fetch("https://adminui-app-server.vercel.app/task", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

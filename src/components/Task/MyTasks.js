@@ -10,7 +10,7 @@ const MyTasks = () => {
   const [tasks, setTasks] = useState([]);
   const handleCompleteBtn = (id) => {
     console.log("complete btn clicked", id);
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(`https://adminui-app-server.vercel.app/task/${id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ const MyTasks = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytasks?email=${user.email}`)
+    fetch(`https://adminui-app-server.vercel.app/mytasks?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
     setLoader(false);

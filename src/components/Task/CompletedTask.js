@@ -9,8 +9,8 @@ const CompletedTask = () => {
   console.log(user);
   const [completedTask, setCompletedTask] = useState([]);
   useEffect(() => {
-    // url = http://localhost:5000/completed
-    fetch(`http://localhost:5000/completed?email=${user.email}`)
+    // url = https://adminui-app-server.vercel.app/completed
+    fetch(`https://adminui-app-server.vercel.app/completed?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setCompletedTask(data));
     setLoader(false);
@@ -20,7 +20,7 @@ const CompletedTask = () => {
     const agree = window.confirm("do you want to delete this");
     if (agree) {
       // console.log("delete this with id ", user._id);
-      fetch(`http://localhost:5000/task/${id}`, {
+      fetch(`https://adminui-app-server.vercel.app/task/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

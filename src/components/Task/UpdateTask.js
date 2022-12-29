@@ -13,7 +13,7 @@ const UpdateTask = () => {
     const latestTask = { newTask };
     console.log(location.state._id);
     // setUpdatedTask(newTask);
-    fetch(`http://localhost:5000/tasks/${location.state._id}`, {
+    fetch(`https://adminui-app-server.vercel.app/tasks/${location.state._id}`, {
       method: "put",
       headers: {
         "content-type": "application/json",
