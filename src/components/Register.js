@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const Register = () => {
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const { createUser, handleGoogleSignin } = useContext(AuthContext);
   const handleSignInForm = (event) => {
@@ -21,8 +22,16 @@ const Register = () => {
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        setErrorMessage(
+          error.message
+            .split("(")[1]
+            .split("/")[1]
+            .split(")")[0]
+            .split("-")
+            .join(" ")
+        );
         // ..
       });
     form.reset();
@@ -81,6 +90,7 @@ const Register = () => {
               className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
+          <p className="text-red-700 text-center uppercase">{errorMessage}</p>
           <input
             type="submit"
             value="Sign Up"
