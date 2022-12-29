@@ -1,0 +1,47 @@
+.trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .trigger:hover {
+    color: #1890ff;
+  }
+  
+  .logo {
+    height: 32px;
+    margin: 16px;
+    color: aliceblue;
+    /* background: rgb(201, 84, 84); */
+  }
+  .anticon[tabindex] {
+    cursor: pointer;
+    /* background-color: white; */
+    color: white;
+}
+.ant-layout{
+  min-height: 100vh;
+}
+.ant-layout-content{
+  margin: 0 !important
+}
+
+.ant-input-affix-wrapper{
+  width: 300px;
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+  .ant-input-affix-wrapper{
+    width: 200px;
+  }
+}
+.notification-count{
+  color: white;
+  transform: translate(13px, -44px);
+    background-color: rgb(255, 166, 0);
+    padding: 3px;
+    border-radius: 10%;
+  
+}
